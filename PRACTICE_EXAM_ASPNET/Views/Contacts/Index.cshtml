@@ -1,0 +1,59 @@
+﻿@model IEnumerable<YourProject.Models.Contact>
+
+@{
+    ViewBag.Title = "Danh sách liên hệ";
+}
+
+<h2>Danh sách liên hệ</h2>
+
+<p>
+    @Html.ActionLink("Thêm mới", "Create")
+</p>
+
+@using (Html.BeginForm("Index", "Contacts", FormMethod.Get))
+{
+    <p>
+        Tìm kiếm: @Html.TextBox("searchString") <input type="submit" value="Tìm kiếm" />
+    </p>
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.ActionLink("Tên liên hệ", "Index", new { sortOrder = ViewBag.NameSortParm })
+        </th>
+        <th>
+            Số điện thoại
+        </th>
+        <th>
+            Tên nhóm
+        </th>
+        <th>
+            Ngày thuê
+        </th>
+        <th>
+            Sinh nhật
+        </th>
+    </tr>
+
+    @foreach (var contact in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => contact.ContactName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => contact.ContactNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => contact.GroupName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => contact.HireDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => contact.Birthday)
+            </td>
+        </tr>
+    }
+</table>
