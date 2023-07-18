@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Exam.Entities
+namespace PRACTICE_EXAM_ASPNET.Entities
 {
     public class Contact
     {

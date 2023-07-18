@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace Exam.Entities
+namespace PRACTICE_EXAM_ASPNET.Entities
 {
     public class DataContext : DbContext
     {
